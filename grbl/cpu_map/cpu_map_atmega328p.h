@@ -130,7 +130,7 @@
 // Start of PWM & Stepper Enabled Spindle
 #ifdef VARIABLE_SPINDLE
   // Advanced Configuration Below You should not need to touch these variables
-  #define PWM_MAX_VALUE    1000.0
+  #define PWM_MAX_VALUE    255
   #define TCCRA_REGISTER	 TCCR2A
   #define TCCRB_REGISTER	 TCCR2B
   #define OCR_REGISTER     OCR2A
