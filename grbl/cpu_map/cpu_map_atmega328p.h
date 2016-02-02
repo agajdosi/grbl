@@ -21,7 +21,9 @@
 /* Grbl officially supports the Arduino Uno, but the other supplied pin mappings are
    supplied by users, so your results may vary. This cpu_map file serves as a central
    pin mapping settings file for AVR 328p used on the Arduino Uno.  
-   This specific branch is ment to use LaserAxe controler with arduino nano v3*/
+   This specific branch is ment to use LaserAxe controler with arduino nano v3
+   #avrdude -b 57600 -B 16 -P /dev/ttyUSB0 -carduino -p m328p -Uflash:w:grbl.hex
+*/
    
 #ifdef GRBL_PLATFORM
 #error "cpu_map already defined: GRBL_PLATFORM=" GRBL_PLATFORM
