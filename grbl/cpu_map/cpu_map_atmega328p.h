@@ -23,6 +23,7 @@
    pin mapping settings file for AVR 328p used on the Arduino Uno.  
    This specific branch is ment to use LaserAxe controler with arduino nano v3
    #avrdude -b 57600 -B 16 -P /dev/ttyUSB0 -carduino -p m328p -Uflash:w:grbl.hex
+   blower is a must small pc fan does great and conects directly to the board
 */
    
 #ifdef GRBL_PLATFORM
