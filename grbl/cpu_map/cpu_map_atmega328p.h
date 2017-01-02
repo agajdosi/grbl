@@ -64,12 +64,12 @@
 #define LIMIT_DDR        DDRB
 #define LIMIT_PIN        PINB
 #define LIMIT_PORT       PORTB
-#define X_LIMIT_BIT      10  // Uno Digital Pin 9
-#define Y_LIMIT_BIT      9  // Uno Digital Pin 10
+#define X_LIMIT_BIT      1  // Uno Digital Pin 9
+#define Y_LIMIT_BIT      2  // Uno Digital Pin 10
 #ifdef VARIABLE_SPINDLE // Z Limit pin and spindle enabled swapped to access hardware PWM on Pin 11. 
-  #define Z_LIMIT_BIT	   11 // Uno Digital Pin 12
+  #define Z_LIMIT_BIT	   4 // Uno Digital Pin 12
 #else
-  #define Z_LIMIT_BIT    11  // Uno Digital Pin 11
+  #define Z_LIMIT_BIT    4  // Uno Digital Pin 11
 #endif
 #define LIMIT_MASK       ((0<<X_LIMIT_BIT)|(0<<Y_LIMIT_BIT)|(0<<Z_LIMIT_BIT)) // All limit bits
 #define LIMIT_INT        PCIE0  // Pin change interrupt enable pin
@@ -83,7 +83,7 @@
 #ifdef VARIABLE_SPINDLE 
   #ifdef USE_SPINDLE_DIR_AS_ENABLE_PIN
     // If enabled, spindle direction pin now used as spindle enable, while PWM remains on D1
-    #define SPINDLE_ENABLE_BIT    5  // Uno Digital Pin 13 (NOTE: D13 can't be pulled-high input due to LED.)
+    #define SPINDLE_ENABLE_BIT    3  // Uno Digital Pin 13 (NOTE: D13 can't be pulled-high input due to LED.)
   #else
     #define SPINDLE_ENABLE_BIT    3  // Uno Digital Pin 11
   #endif
@@ -93,7 +93,7 @@
 #ifndef USE_SPINDLE_DIR_AS_ENABLE_PIN
   #define SPINDLE_DIRECTION_DDR   DDRB
   #define SPINDLE_DIRECTION_PORT  PORTB
-  #define SPINDLE_DIRECTION_BIT   5  // Uno Digital Pin 13 (NOTE: D13 can't be pulled-high input due to LED.)
+  #define SPINDLE_DIRECTION_BIT   3  // Uno Digital Pin 13 (NOTE: D13 can't be pulled-high input due to LED.)
 #endif
   
 // Define flood and mist coolant enable output pins.
@@ -101,11 +101,11 @@
 // a later date if flash and memory space allows.
 #define COOLANT_FLOOD_DDR   DDRC
 #define COOLANT_FLOOD_PORT  PORTC
-#define COOLANT_FLOOD_BIT   3  // Uno Analog Pin 3
+#define COOLANT_FLOOD_BIT   3  // Uno Analog Pin 3 HIS PLUGS TO THE FAN OUTPUT M8 M9
 #ifdef ENABLE_M7 // Mist coolant disabled by default. See config.h to enable/disable.
   #define COOLANT_MIST_DDR   DDRC
   #define COOLANT_MIST_PORT  PORTC
-  #define COOLANT_MIST_BIT   4  // Uno Analog Pin 4
+  #define COOLANT_MIST_BIT   4  // Uno Analog Pin 4 T
 #endif  
 
 // Define user-control controls (cycle start, reset, feed hold) input pins.
@@ -127,7 +127,7 @@
 #define PROBE_DDR       DDRC
 #define PROBE_PIN       PINC
 #define PROBE_PORT      PORTC
-#define PROBE_BIT       10  // Uno Analog Pin 5
+#define PROBE_BIT       5  // Uno Analog Pin 5
 #define PROBE_MASK      (0<<PROBE_BIT)
 
 // Start of PWM & Stepper Enabled Spindle
