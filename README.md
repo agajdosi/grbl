@@ -1,5 +1,13 @@
 ![GitHub Logo](https://github.com/gnea/gnea-Media/blob/master/Grbl%20Logo/Grbl%20Logo%20250px.png?raw=true)
 
+### How to
+
+1. clean previous build: `make clean`
+2. to build run: `make` 
+2. upload code to board: `avrdude -v -patmega328p -Uflash:w:./grbl.hex:i -carduino -b 57600 -P /dev/ttyUSB0`
+
+### Original Readme
+
 ***
 _Click the `Release` tab to download pre-compiled `.hex` files or just [click here](https://github.com/gnea/grbl/releases)_
 ***
